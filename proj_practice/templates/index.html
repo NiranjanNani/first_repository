@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title></title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <a href="{% url 'about' %}">click here to go to about</a>
+    <button type="button" name="button" onclick="clickMe()">Click</button>
+    <br>
+    <br>
+    <form  action="{% url 'result' %}" >
+      {% csrf_token %}
+      <input type="text" name="user_input">
+      <br>
+      <br>
+      <input type="submit" value="clickMe">
+
+    </form>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>
